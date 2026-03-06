@@ -101,7 +101,7 @@ app.get("/api/graduatoria", (req, res) => {
 app.use(express.static(path.join(__dirname, "dist")));
 
 // Gestione rotte React (Catch-all)
-app.get("/*", (req, res) => {
+app.get("/(.*)", (req, res) => {
   res.sendFile(path.join(__dirname, "dist", "index.html"));
 });
 
